@@ -5,7 +5,6 @@ from datetime import datetime
 # create Image object with the input image
 foto = Image.open('foto.png')
 W, H =  foto.size
-
  
 # initialise the drawing context with
 # the foto object as background
@@ -16,7 +15,6 @@ draw = ImageDraw.Draw(foto)
 font = ImageFont.truetype('Montserrat-Regular.ttf', size=30)
 #spicify the color
 color = 'rgb(255, 255, 255)' # white color
-
  
 # create the text for watermark
 identitas = "18218050 - Garin Ichsan Nugraha"
@@ -29,6 +27,7 @@ w2, h2 = draw.textsize(timestamp, font=font)
 Hrec = round(h1+h2+(h1+h2)/2) #cuztomize the rectangle hight first
 rectangle = Image.new('RGB', (W, (Hrec)), "black")
 
+#create drawable image of the rectangle to draw the text over
 watermark = ImageDraw.Draw(rectangle)
 
 # spicify the position for identitas text
